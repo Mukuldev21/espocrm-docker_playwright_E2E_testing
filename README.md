@@ -49,6 +49,11 @@ Follow the prompts to configure Playwright for TypeScript.
 
 This project uses Playwright for end-to-end testing.
 
+### Test Documentation
+
+*   [Test Plan](testplan.md): High-level strategy and scope of testing.
+*   [Test Cases](testcases.md): Detailed test scenarios and steps.
+
 ### Running Tests
 
 To run all tests:
@@ -74,6 +79,8 @@ npx playwright test --ui
 *   `docker-compose.yml`: Docker configuration for EspoCRM.
 *   `tests/`: Directory containing Playwright test specifications.
 *   `playwright.config.ts`: Configuration file for Playwright.
+*   `testplan.md`: High-level test plan.
+*   `testcases.md`: Detailed test cases.
 
 ## Progress & Updates
 
