@@ -5,12 +5,16 @@ export class LoginPage {
     readonly usernameInput: Locator;
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
+    readonly errorMessage: Locator;
+    readonly errorText: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.usernameInput = page.getByRole('textbox', { name: 'Username' });
         this.passwordInput = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Log in' });
+        this.errorMessage = page.locator('div.message');
+        this.errorText = page.locator('div.popover-content', { hasText: 'Username can not be empty' });
     }
 
     async goto() {
@@ -24,8 +28,6 @@ export class LoginPage {
         await this.passwordInput.click();
         await this.passwordInput.fill(password);
         await this.loginButton.click();
-        // Extra step from codegen, possibly dismissing a dialog or menu
-        await expect(this.page.getByRole('button').first()).toBeVisible();
-        await this.page.getByRole('button').first().click();
+
     }
 }
