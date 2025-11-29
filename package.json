@@ -1,0 +1,23 @@
+{
+  "name": "espocrm-docker",
+  "version": "1.0.0",
+  "description": "This project involves running EspoCRM locally using Docker and performing extensive automated testing using Playwright with TypeScript.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mukuldev21/espocrm-docker_playwright_E2E_testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mukuldev21/espocrm-docker_playwright_E2E_testing/issues"
+  },
+  "homepage": "https://github.com/Mukuldev21/espocrm-docker_playwright_E2E_testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}
