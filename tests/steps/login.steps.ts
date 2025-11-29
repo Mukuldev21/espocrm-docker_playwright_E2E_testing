@@ -77,6 +77,8 @@ Given('I am on the dashboard', async ({ page }) => {
     await loginPage.loginButton.click();
     console.log('Waiting for dashboard...');
     await homePage.verifyDashboard();
+    console.log('Click on Hamburger Menu...');
+    await homePage.clickOnHamburgerMenu();
 });
 
 When('I click the logout button', async ({ page }) => {

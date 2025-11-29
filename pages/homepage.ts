@@ -1,6 +1,9 @@
 import { Page, expect, Locator } from '@playwright/test';
 
 export class HomePage {
+    clickHamburgerMenu() {
+        throw new Error('Method not implemented.');
+    }
     readonly page: Page;
     readonly hamburgerMenu: Locator;
     readonly logo: Locator;
@@ -13,7 +16,8 @@ export class HomePage {
         this.hamburgerMenu = page.getByRole('button').first();
         this.logo = page.getByRole('link', { name: 'logo' });
         this.homeLink = page.getByRole('link', { name: 'Home' });
-        this.threedotsMenu = page.getByRole('button', { name: 'Menu' });
+        //this.threedotsMenu = page.getByRole('button', { name: 'Menu' });
+        this.threedotsMenu = page.locator('#nav-menu-dropdown');
         this.logoutButton = page.getByRole('button', { name: 'Log out' });
 
     }
@@ -45,5 +49,9 @@ export class HomePage {
         await this.logoutButton.click();
     }
 
+    //click hamburger menu
+    async clickOnHamburgerMenu() {
+        await this.hamburgerMenu.click();
+    }
 
 }
