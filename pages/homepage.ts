@@ -9,16 +9,14 @@ export class HomePage {
 
     async verifyDashboard() {
         // Wait for login to complete (login button should disappear)
-        await expect(this.page.locator('#btn-login')).not.toBeVisible({ timeout: 15000 });
+        await expect(this.page.getByRole('button', { name: 'Log in' })).not.toBeVisible({ timeout: 15000 });
 
-        // Check if we are still on the login page (error case)
-        const isLoginPage = await this.page.locator('#field-userName').isVisible();
-        if (isLoginPage) {
-            console.log('Still on login page. Checking for errors...');
-            console.log('Current URL:', this.page.url());
-        }
+        // Click hamburger menu to reveal the logo (as per codegen)
+        await expect(this.page.getByRole('button').first()).toBeVisible();
+        await this.page.getByRole('button').first().click();
 
-        // Verify URL contains '#' which indicates we are inside the app
-        await expect(this.page).toHaveURL(/#/, { timeout: 15000 });
+        // Verify elements on the dashboard
+        await expect(this.page.getByRole('link', { name: 'logo' })).toBeVisible();
+        await expect(this.page.getByRole('link', { name: ' Home' })).toBeVisible();
     }
 }
