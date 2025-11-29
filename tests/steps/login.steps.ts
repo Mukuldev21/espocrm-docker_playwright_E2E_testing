@@ -1,39 +1,31 @@
 import { createBdd } from 'playwright-bdd';
-import { expect } from '@playwright/test';
+import { testUser } from '../../fixtures/testuser';
+import { LoginPage } from '../../pages/loginpage';
+import { HomePage } from '../../pages/homepage';
 
 const { Given, When, Then } = createBdd();
 
 Given('I am on the login page', async ({ page }) => {
+    const loginPage = new LoginPage(page);
     console.log('Navigating to login page...');
-    await page.goto('/');
-    await expect(page.locator('#field-userName')).toBeVisible();
+    await loginPage.goto();
 });
 
 When('I enter username and password', async ({ page }) => {
-    console.log(`Entering credentials: admin / password`);
-    await page.fill('#field-userName', 'admin');
-    await page.fill('#field-password', 'password');
+    const loginPage = new LoginPage(page);
+    console.log("Entering credentials:");
+    await loginPage.usernameInput.fill(testUser.username);
+    await loginPage.passwordInput.fill(testUser.password);
 });
 
 When('I click the login button', async ({ page }) => {
+    const loginPage = new LoginPage(page);
     console.log('Clicking login button...');
-    await page.click('#btn-login');
+    await loginPage.loginButton.click();
 });
 
 Then('I should see the dashboard', async ({ page }) => {
+    const homePage = new HomePage(page);
     console.log('Waiting for dashboard...');
-    // Wait for login to complete (login button should disappear)
-    await expect(page.locator('#btn-login')).not.toBeVisible({ timeout: 15000 });
-
-    // Check if we are still on the login page (error case)
-    const isLoginPage = await page.locator('#field-userName').isVisible();
-    if (isLoginPage) {
-        console.log('Still on login page. Checking for errors...');
-        // Try to find an error message
-        // Common EspoCRM error container might be .alert or similar, but let's just log the URL
-        console.log('Current URL:', page.url());
-    }
-
-    // Verify URL contains '#' which indicates we are inside the app
-    await expect(page).toHaveURL(/#/, { timeout: 15000 });
+    await homePage.verifyDashboard();
 });

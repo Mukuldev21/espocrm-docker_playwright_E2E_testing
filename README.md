@@ -80,6 +80,8 @@ npx playwright test --ui
 
 *   `docker-compose.yml`: Docker configuration for EspoCRM.
 *   `tests/`: Directory containing Playwright test specifications.
+*   `pages/`: Directory containing Page Object Model classes.
+*   `fixtures/`: Directory containing test data and fixtures.
 *   `playwright.config.ts`: Configuration file for Playwright.
 *   `testplan.md`: High-level test plan.
 *   `testcases.md`: Detailed test cases.
