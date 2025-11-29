@@ -5,6 +5,11 @@ const reportDir = path.join(__dirname, '..', 'allure-report');
 const stylesFile = path.join(reportDir, 'styles.css');
 
 if (fs.existsSync(stylesFile)) {
+    let cssContent = fs.readFileSync(stylesFile, 'utf8');
+    cssContent = cssContent.replace(/#e4edfe/g, '#2a2a2a'); // Replace light blue highlight
+    cssContent = cssContent.replace(/#f5f5f5/g, '#2a2a2a'); // Replace light grey if present
+    fs.writeFileSync(stylesFile, cssContent);
+
     const darkModeCSS = `
     /* Dark Mode Overrides - Refined */
     :root {
@@ -85,13 +90,13 @@ if (fs.existsSync(stylesFile)) {
         color: var(--text-primary) !important;
         border-bottom: 1px solid var(--dark-border) !important;
     }
-    .tree__item:hover, .step-header:hover, .attachment-row:hover {
-        background-color: #383838 !important; /* Darker grey for hover */
+    .tree__item:hover, .step-header:hover, .attachment-row:hover, .table tr:hover, .widget__item:hover, .widget__row:hover, .widget__table tr:hover, .widget tr:hover {
+        background-color: #2a2a2a !important; /* Dark grey for hover */
         color: #ffffff !important;
         cursor: pointer !important;
     }
     .node__title:hover {
-        background-color: #383838 !important;
+        background-color: #2a2a2a !important;
         color: #ffffff !important;
     }
     
@@ -133,7 +138,7 @@ if (fs.existsSync(stylesFile)) {
     `;
 
     fs.appendFileSync(stylesFile, darkModeCSS);
-    console.log('Dark Mode theme applied to Allure Report.');
+    console.log('Dark Mode theme applied to Allure Report (including global color replacements).');
 } else {
     console.error('allure-report/styles.css not found. Make sure to generate the report first.');
 }
