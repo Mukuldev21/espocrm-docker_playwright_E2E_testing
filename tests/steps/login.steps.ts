@@ -64,3 +64,34 @@ Then('I should see the error text message', async ({ page }) => {
     console.log('Waiting for error text message...');
     await expect(loginPage.errorText).toBeVisible();
 });
+
+Given('I am on the dashboard', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    const homePage = new HomePage(page);
+    console.log('Navigating to login page...');
+    await loginPage.goto();
+    console.log("Entering credentials:");
+    await loginPage.usernameInput.fill(testUser.username);
+    await loginPage.passwordInput.fill(testUser.password);
+    console.log('Clicking login button...');
+    await loginPage.loginButton.click();
+    console.log('Waiting for dashboard...');
+    await homePage.verifyDashboard();
+});
+
+When('I click the logout button', async ({ page }) => {
+    const homePage = new HomePage(page);
+    console.log('Waiting for page to load...');
+    await homePage.waitForPageToLoad();
+    console.log('Clicking Threedots menu...');
+    await homePage.clickThreedotsMenu();
+    console.log('Clicking logout button...');
+    await homePage.clickLogoutButton();
+});
+
+Then('I should be redirected to the login page', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    console.log('Waiting for login page...');
+    await expect(loginPage.page.getByRole('img')).toBeVisible();
+});
+

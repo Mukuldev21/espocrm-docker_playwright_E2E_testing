@@ -4,6 +4,8 @@ Feature: Authentication Module
   I want to log in to EspoCRM
   So that I can access my account
 
+  
+
   @TC001
   Scenario: TC001: Verify successful login
     Given I am on the login page
@@ -28,3 +30,9 @@ Feature: Authentication Module
     When I leave username and password empty
     And I click the login button
     Then I should see the error text message
+
+  @TC004
+  Scenario: TC004: Verify logout functionality
+    Given I am on the dashboard
+    When I click the logout button
+    Then I should be redirected to the login page

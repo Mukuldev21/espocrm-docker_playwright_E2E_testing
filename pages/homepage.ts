@@ -5,12 +5,17 @@ export class HomePage {
     readonly hamburgerMenu: Locator;
     readonly logo: Locator;
     readonly homeLink: Locator;
+    readonly threedotsMenu: Locator;
+    readonly logoutButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.hamburgerMenu = page.getByRole('button').first();
         this.logo = page.getByRole('link', { name: 'logo' });
         this.homeLink = page.getByRole('link', { name: 'Home' });
+        this.threedotsMenu = page.getByRole('button', { name: 'Menu' });
+        this.logoutButton = page.getByRole('button', { name: 'Log out' });
+
     }
 
     async verifyDashboard() {
@@ -25,4 +30,20 @@ export class HomePage {
         await expect(this.logo).toBeVisible();
         await expect(this.homeLink).toBeVisible();
     }
+    //Wait for page to load
+    async waitForPageToLoad() {
+        await this.page.waitForLoadState('load');
+    }
+
+    //click threedots menu
+    async clickThreedotsMenu() {
+        await this.threedotsMenu.click();
+    }
+
+    //click logout button
+    async clickLogoutButton() {
+        await this.logoutButton.click();
+    }
+
+
 }
