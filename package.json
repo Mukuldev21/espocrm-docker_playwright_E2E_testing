@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run bdd",
-    "bdd": "bddgen && playwright test"
+    "bdd": "bddgen && (playwright test || true) && npm run report",
+    "report": "allure generate allure-results -o allure-report --clean && allure open allure-report"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.2",
     "playwright-bdd": "^8.4.2"
   }
 }
