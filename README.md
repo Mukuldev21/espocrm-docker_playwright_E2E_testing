@@ -56,16 +56,18 @@ This project uses Playwright for end-to-end testing.
 
 ### Running Tests
 
-To run all tests:
+### Running Tests
+
+To run all Cucumber BDD tests:
 
 ```bash
-npx playwright test
+npm run bdd
 ```
 
-To run a specific test file:
+To run a specific feature file (e.g., `login.feature`):
 
 ```bash
-npx playwright test tests/example.spec.ts
+npm run bdd -- "login.feature"
 ```
 
 To run tests in UI mode:

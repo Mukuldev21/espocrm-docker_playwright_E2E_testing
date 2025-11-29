@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "This project involves running EspoCRM locally using Docker and performing extensive automated testing using Playwright with TypeScript.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npm run bdd",
+    "bdd": "bddgen && playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mukuldev21/espocrm-docker_playwright_E2E_testing.git"
@@ -17,7 +20,9 @@
   },
   "homepage": "https://github.com/Mukuldev21/espocrm-docker_playwright_E2E_testing#readme",
   "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.57.0",
-    "@types/node": "^24.10.1"
+    "@types/node": "^24.10.1",
+    "playwright-bdd": "^8.4.2"
   }
 }
