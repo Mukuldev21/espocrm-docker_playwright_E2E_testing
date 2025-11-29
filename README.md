@@ -1,0 +1,99 @@
+# EspoCRM Docker & Playwright Testing
+
+This project involves running EspoCRM locally using Docker and performing extensive automated testing using Playwright with TypeScript.
+
+## Project Overview
+
+*   **Application**: EspoCRM (running via Docker)
+*   **Testing Framework**: Playwright
+*   **Language**: TypeScript
+
+## Prerequisites
+
+Ensure you have the following installed on your local machine:
+
+*   [Docker](https://www.docker.com/) & Docker Compose
+*   [Node.js](https://nodejs.org/) (LTS version recommended)
+*   npm (usually comes with Node.js) or yarn
+
+## Setup Instructions
+
+### 1. Start EspoCRM
+
+To start the EspoCRM application using the provided Docker Compose configuration:
+
+```bash
+docker-compose up -d
+```
+
+Wait for the containers to initialize. You can check the status with:
+
+```bash
+docker-compose ps
+```
+
+Access the application at `http://localhost:8080` (or the port defined in your `docker-compose.yml`).
+
+### 2. Install Dependencies
+
+Initialize the project and install Playwright dependencies (if not already done):
+
+```bash
+npm init -y
+npm init playwright@latest
+```
+
+Follow the prompts to configure Playwright for TypeScript.
+
+## Testing
+
+This project uses Playwright for end-to-end testing.
+
+### Running Tests
+
+To run all tests:
+
+```bash
+npx playwright test
+```
+
+To run a specific test file:
+
+```bash
+npx playwright test tests/example.spec.ts
+```
+
+To run tests in UI mode:
+
+```bash
+npx playwright test --ui
+```
+
+### Project Structure
+
+*   `docker-compose.yml`: Docker configuration for EspoCRM.
+*   `tests/`: Directory containing Playwright test specifications.
+*   `playwright.config.ts`: Configuration file for Playwright.
+
+## Progress & Updates
+
+This README will be updated as the testing suite expands and more scenarios are covered.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or support, please contact [mukul.com12@gmail.com](mailto:mukul.com12@gmail.com).
+
+## Acknowledgments
+
+*   [Docker](https://www.docker.com/)
+*   [Node.js](https://nodejs.org/)
+*   [Playwright](https://playwright.dev/)
+*   [TypeScript](https://www.typescriptlang.org/)
+
+## Author
+
+Mukul Dev Mahato
