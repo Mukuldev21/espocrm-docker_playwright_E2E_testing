@@ -50,31 +50,41 @@ Follow the prompts to configure Playwright for TypeScript.
 This project uses Playwright for end-to-end testing.
 
 ### Test Documentation
-
 *   [Test Plan](testplan.md): High-level strategy and scope of testing.
 *   [Test Cases](testcases.md): Detailed test scenarios and steps.
 
 ### Running Tests
 
-### Running Tests
-
 To run all Cucumber BDD tests:
-
 ```bash
 npm run bdd
 ```
 
 To run a specific feature file (e.g., `login.feature`):
-
 ```bash
 npm run bdd -- "login.feature"
 ```
 
 To run tests in UI mode:
-
 ```bash
 npx playwright test --ui
 ```
+To run a specific feature file:
+```bash
+npm run bdd -- "features/login.feature"
+```
+
+### Reporting
+
+The project uses **Allure Report** for detailed test execution reports.
+
+*   **Automatic Generation**: The Allure report is automatically generated and opened in your default browser after running `npm run bdd`.
+*   **Dark Theme**: The report uses a custom Dark Mode theme for better readability.
+*   **Content**: The report includes:
+    *   **Suites**: Grouped by Parent Suite (Project) and Suite (Module).
+    *   **Test Cases**: Detailed steps, parameters, and severity.
+    *   **Environment**: Browser, OS, and User details.
+    *   **Categories**: Classification of failures (e.g., Product Defects, Test Defects).
 
 ### Project Structure
 

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run bdd",
-    "bdd": "bddgen && (playwright test || true) && npm run report",
-    "report": "allure generate allure-results -o allure-report --clean && allure open allure-report"
+    "bdd": "npx rimraf allure-results && bddgen && (playwright test || true) && node scripts/generate-allure-metadata.js && npm run report",
+    "report": "allure generate allure-results -o allure-report --clean && node scripts/customize-theme.js && allure open allure-report"
   },
   "repository": {
     "type": "git",
