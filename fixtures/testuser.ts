@@ -1,4 +1,4 @@
 export const testUser = {
-    username: 'admin',
-    password: 'password'
+    username: 'heinsberg',
+    password: 'Methlord12#'
 };
