@@ -27,3 +27,44 @@ Then('I should see the {string} menu item', async ({ page }, menuItem: string) =
             throw new Error(`Menu item ${menuItem} not implemented`);
     }
 });
+
+When('I click on the {string} menu item', async ({ page }, menuItem: string) => {
+    const homePage = new HomePage(page);
+    console.log(`Clicking on ${menuItem} menu item...`);
+    switch (menuItem) {
+        case 'Accounts':
+            await homePage.accountsLink.click();
+            break;
+        case 'Contacts':
+            await homePage.contactsLink.click();
+            break;
+        case 'Leads':
+            await homePage.leadsLink.click();
+            break;
+        case 'Opportunities':
+            await homePage.opportunitiesLink.click();
+            break;
+        default:
+            throw new Error(`Menu item ${menuItem} not implemented`);
+    }
+});
+
+Then('I should be navigated to the {string} page', async ({ page }, pageName: string) => {
+    console.log(`Verifying navigation to ${pageName} page...`);
+    switch (pageName) {
+        case 'Accounts':
+            await expect(page).toHaveURL(/#Account/);
+            break;
+        case 'Contacts':
+            await expect(page).toHaveURL(/#Contact/);
+            break;
+        case 'Leads':
+            await expect(page).toHaveURL(/#Lead/);
+            break;
+        case 'Opportunities':
+            await expect(page).toHaveURL(/#Opportunity/);
+            break;
+        default:
+            throw new Error(`Page verification for ${pageName} not implemented`);
+    }
+});
