@@ -21,6 +21,9 @@ export class AccountsPage {
         // Locator for verification (e.g., the header showing the account name after save)
         // Assuming the header has the account name
         this.accountNameHeader = page.locator('.header-title');
+
+        // Search locators
+        this.searchInput = page.locator('input[data-name="textFilter"]');
     }
 
     async clickCreateAccount() {
@@ -49,5 +52,17 @@ export class AccountsPage {
         await expect(this.page).toHaveURL(new RegExp(`#Account/view/`));
         // Verify the header contains the name
         await expect(this.page.locator('.header-title')).toContainText(name);
+    }
+
+    async searchForAccount(name: string) {
+        await this.searchInput.fill(name);
+        await this.page.keyboard.press('Enter');
+        await this.page.waitForLoadState('networkidle');
+    }
+
+    async verifyAccountInList(name: string) {
+        // Verify the account name appears in the list
+        // Assuming the list has links with the account name
+        await expect(this.page.getByRole('link', { name: name }).first()).toBeVisible();
     }
 }

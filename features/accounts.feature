@@ -10,3 +10,10 @@ Feature: Accounts Module
         And I enter unique account details
         And I click the "Save" button
         Then I should see the newly created account
+
+    @TC008
+    Scenario: TC008: Verify Account in List
+        Given I am on the dashboard
+        When I click on the "Accounts" menu item
+        And I search for the created account
+        Then I should see the account in the list

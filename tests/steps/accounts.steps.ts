@@ -2,6 +2,7 @@ import { createBdd } from 'playwright-bdd';
 import { AccountsPage } from '../../pages/accountspage';
 import { expect } from '@playwright/test';
 import { generateAccountDetails } from '../../fixtures/accountdetails';
+import { getaccount_searchdata } from '../../fixtures/search_accountdata';
 
 const { Given, When, Then } = createBdd();
 
@@ -31,4 +32,20 @@ Then('I should see the newly created account', async ({ page }) => {
     const accountsPage = new AccountsPage(page);
     console.log(`Verifying account ${createdAccountDetails.name} created...`);
     await accountsPage.verifyAccountCreated(createdAccountDetails.name);
+});
+
+
+
+When('I search for the created account', async ({ page }) => {
+    const accountsPage = new AccountsPage(page);
+    const accountSearchData = getaccount_searchdata();
+    console.log(`Searching for account: ${accountSearchData.name}`);
+    await accountsPage.searchForAccount(accountSearchData.name);
+});
+
+Then('I should see the account in the list', async ({ page }) => {
+    const accountsPage = new AccountsPage(page);
+    const accountSearchData = getaccount_searchdata();
+    console.log(`Verifying account ${accountSearchData.name} in list...`);
+    await accountsPage.verifyAccountInList(accountSearchData.name);
 });

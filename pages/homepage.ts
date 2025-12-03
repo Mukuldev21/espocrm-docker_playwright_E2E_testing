@@ -24,10 +24,10 @@ export class HomePage {
         //this.threedotsMenu = page.getByRole('button', { name: 'Menu' });
         this.threedotsMenu = page.locator('#nav-menu-dropdown');
         this.logoutButton = page.getByRole('button', { name: 'Log out' });
-        this.accountsLink = page.locator('a[href="#Account"]');
-        this.contactsLink = page.locator('a[href="#Contact"]');
-        this.leadsLink = page.locator('a[href="#Lead"]');
-        this.opportunitiesLink = page.locator('a[href="#Opportunity"]');
+        this.accountsLink = page.locator('.nav-link[href="#Account"]');
+        this.contactsLink = page.locator('.nav-link[href="#Contact"]');
+        this.leadsLink = page.locator('.nav-link[href="#Lead"]');
+        this.opportunitiesLink = page.locator('.nav-link[href="#Opportunity"]');
         //this.casesLink = page.getByRole('link', { name: 'Cases' });
     }
 
