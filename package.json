@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run bdd",
-    "bdd": "npx rimraf allure-results && bddgen && (playwright test || true) && node scripts/generate-allure-metadata.js && npm run report",
+    "bdd": "npx rimraf allure-results && bddgen && (npm run test:auth && npm run test:functional || true) && node scripts/generate-allure-metadata.js && npm run report",
+    "test:auth": "playwright test --project=\"Login Tests\"",
+    "test:functional": "playwright test --project=\"EspoCRM E2E Tests\"",
     "report": "allure generate allure-results -o allure-report --clean && node scripts/customize-theme.js && allure open allure-report"
   },
   "repository": {

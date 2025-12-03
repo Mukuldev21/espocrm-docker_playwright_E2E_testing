@@ -43,8 +43,26 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      testMatch: /auth\.setup\.ts/,
+      testDir: './tests',
+    },
+    {
       name: 'EspoCRM E2E Tests',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json',
+      },
+      dependencies: ['setup'],
+      grepInvert: /@no-auth/,
+    },
+    {
+      name: 'Login Tests',
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: { cookies: [], origins: [] },
+      },
+      grep: /@no-auth/,
     },
 
     // {

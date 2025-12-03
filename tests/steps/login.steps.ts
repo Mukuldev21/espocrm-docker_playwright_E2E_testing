@@ -68,15 +68,26 @@ Then('I should see the error text message', async ({ page }) => {
 Given('I am on the dashboard', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const homePage = new HomePage(page);
-    console.log('Navigating to login page...');
-    await loginPage.goto();
-    console.log("Entering credentials:");
-    await loginPage.usernameInput.fill(testUser.username);
-    await loginPage.passwordInput.fill(testUser.password);
-    console.log('Clicking login button...');
-    await loginPage.loginButton.click();
-    console.log('Waiting for dashboard...');
-    await homePage.verifyDashboard();
+
+    await page.goto('/');
+
+    // Check if we are already logged in
+    try {
+        await homePage.verifyDashboard();
+        console.log('Already logged in, skipping login steps.');
+    } catch (e) {
+        console.log('Not logged in, performing login...');
+        console.log('Navigating to login page...');
+        await loginPage.goto();
+        console.log("Entering credentials:");
+        await loginPage.usernameInput.fill(testUser.username);
+        await loginPage.passwordInput.fill(testUser.password);
+        console.log('Clicking login button...');
+        await loginPage.loginButton.click();
+        console.log('Waiting for dashboard...');
+        await homePage.verifyDashboard();
+    }
+
     console.log('Click on Hamburger Menu...');
     await homePage.clickOnHamburgerMenu();
 });

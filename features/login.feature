@@ -1,4 +1,5 @@
 @parentSuite:EspoCRM_E2E_Tests @suite:Authentication_Module @severity:critical
+@no-auth
 Feature: Authentication Module
   As a user
   I want to log in to EspoCRM
