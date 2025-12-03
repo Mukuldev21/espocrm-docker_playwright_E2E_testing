@@ -10,6 +10,11 @@ export class HomePage {
     readonly homeLink: Locator;
     readonly threedotsMenu: Locator;
     readonly logoutButton: Locator;
+    readonly accountsLink: Locator;
+    readonly contactsLink: Locator;
+    readonly leadsLink: Locator;
+    readonly opportunitiesLink: Locator;
+    //readonly casesLink: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -19,7 +24,11 @@ export class HomePage {
         //this.threedotsMenu = page.getByRole('button', { name: 'Menu' });
         this.threedotsMenu = page.locator('#nav-menu-dropdown');
         this.logoutButton = page.getByRole('button', { name: 'Log out' });
-
+        this.accountsLink = page.locator('a[href="#Account"]');
+        this.contactsLink = page.locator('a[href="#Contact"]');
+        this.leadsLink = page.locator('a[href="#Lead"]');
+        this.opportunitiesLink = page.locator('a[href="#Opportunity"]');
+        //this.casesLink = page.getByRole('link', { name: 'Cases' });
     }
 
     async verifyDashboard() {
