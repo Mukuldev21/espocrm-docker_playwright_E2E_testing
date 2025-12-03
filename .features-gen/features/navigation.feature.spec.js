@@ -1,7 +1,7 @@
 // Generated from: features\navigation.feature
 import { test } from "playwright-bdd";
 
-test.describe('Navigation', () => {
+test.describe('General Navigation Module', () => {
 
   test('TC005: Verify Navigation Menu Items', { tag: ['@parentSuite:EspoCRM_E2E_Tests', '@suite:Navigation_Module', '@severity:critical', '@TC005'] }, async ({ Given, Then, And, page }) => { 
     await Given('I am on the dashboard', null, { page }); 
