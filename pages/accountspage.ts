@@ -7,6 +7,7 @@ export class AccountsPage {
     readonly emailInput: Locator;
     readonly saveButton: Locator;
     readonly accountNameHeader: Locator;
+    readonly searchInput: Locator;
 
     constructor(page: Page) {
         this.page = page;
