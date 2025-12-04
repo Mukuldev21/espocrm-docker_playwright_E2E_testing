@@ -36,9 +36,14 @@ export function generateAccountDetails() {
 
     const name = `${randomPrefix} ${randomSuffix}`;
     const email = `${randomPrefix.toLowerCase().replace(/\s/g, '')}.${uniqueId}@example.com`;
+    const domains = ['.com', '.co.in', '.co.us', '.net', '.org', '.io', '.tech'];
+    const randomDomain = domains[Math.floor(Math.random() * domains.length)];
+    const formattedName = name.trim().toLowerCase().split(/\s+/).join('.');
+    const website = `www.${formattedName}${randomDomain}`;
 
     return {
         name,
-        email
+        email,
+        website
     };
 }
