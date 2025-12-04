@@ -3,6 +3,7 @@ import { AccountsPage } from '../../pages/accountspage';
 import { expect } from '@playwright/test';
 import { generateAccountDetails } from '../../fixtures/accountdetails';
 import { getaccount_searchdata } from '../../fixtures/search_accountdata';
+import { saveAccountName } from '../../utils/fileUtils';
 
 const { Given, When, Then } = createBdd();
 
@@ -18,6 +19,7 @@ When('I enter unique account details', async ({ page }) => {
     const accountsPage = new AccountsPage(page);
     createdAccountDetails = generateAccountDetails();
     console.log(`Entering unique account details: Name=${createdAccountDetails.name}, Email=${createdAccountDetails.email}`);
+    saveAccountName(createdAccountDetails.name);
     await accountsPage.enterAccountName(createdAccountDetails.name);
     await accountsPage.enterAccountEmail(createdAccountDetails.email);
 });
