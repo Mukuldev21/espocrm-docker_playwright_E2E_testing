@@ -74,6 +74,17 @@ To run a specific feature file:
 npm run bdd -- "features/login.feature"
 ```
 
+### Data Generation
+
+To generate bulk test data (e.g., create 5 new accounts):
+```bash
+npm run generate-data
+```
+This command will:
+1. Run the data generation script.
+2. Create 5 new accounts in EspoCRM.
+3. Append the new account names to `fixtures/accountnamesadded.json`.
+
 ### Reporting
 
 The project uses **Allure Report** for detailed test execution reports.
