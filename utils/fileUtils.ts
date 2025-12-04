@@ -4,23 +4,26 @@ import * as path from 'path';
 const ACCOUNT_NAMES_FILE = path.join(process.cwd(), 'fixtures', 'accountnamesadded.json');
 
 export function saveAccountName(name: string) {
-    let accountNames: { [key: string]: string }[] = [];
+    let accountNames: { [key: string]: string } = {};
 
     if (fs.existsSync(ACCOUNT_NAMES_FILE)) {
         try {
             const fileContent = fs.readFileSync(ACCOUNT_NAMES_FILE, 'utf-8');
             accountNames = JSON.parse(fileContent);
+            // Handle case where file might contain array from previous version
+            if (Array.isArray(accountNames)) {
+                accountNames = {};
+            }
         } catch (error) {
             console.error('Error reading account names file:', error);
-            accountNames = [];
+            accountNames = {};
         }
     }
 
-    const nextIndex = accountNames.length + 1;
+    const nextIndex = Object.keys(accountNames).length + 1;
     const key = `account${nextIndex.toString().padStart(2, '0')}`;
-    const newEntry = { [key]: name };
 
-    accountNames.push(newEntry);
+    accountNames[key] = name;
 
     try {
         fs.writeFileSync(ACCOUNT_NAMES_FILE, JSON.stringify(accountNames, null, 2));
