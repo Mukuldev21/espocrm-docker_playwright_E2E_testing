@@ -38,3 +38,19 @@ export function saveAccountName(name: string) {
         console.error('Error writing to account names file:', error);
     }
 }
+
+export function getRandomAccountName(): string | null {
+    if (fs.existsSync(ACCOUNT_NAMES_FILE)) {
+        try {
+            const fileContent = fs.readFileSync(ACCOUNT_NAMES_FILE, 'utf-8');
+            const accountNames = JSON.parse(fileContent);
+            if (Array.isArray(accountNames) && accountNames.length > 0) {
+                const randomIndex = Math.floor(Math.random() * accountNames.length);
+                return accountNames[randomIndex];
+            }
+        } catch (error) {
+            console.error('Error reading account names file:', error);
+        }
+    }
+    return null;
+}

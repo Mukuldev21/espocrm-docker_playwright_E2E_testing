@@ -3,11 +3,12 @@ import { AccountsPage } from '../../pages/accountspage';
 import { expect } from '@playwright/test';
 import { generateAccountDetails } from '../../fixtures/accountdetails';
 import { getaccount_searchdata } from '../../fixtures/search_accountdata';
-import { saveAccountName } from '../../utils/fileUtils';
+import { saveAccountName, getRandomAccountName } from '../../utils/fileUtils';
 
 const { Given, When, Then } = createBdd();
 
 let createdAccountDetails: { name: string, email: string };
+let searchedAccountName: string;
 
 When('I click the "Create Account" button', async ({ page }) => {
     const accountsPage = new AccountsPage(page);
@@ -40,14 +41,17 @@ Then('I should see the newly created account', async ({ page }) => {
 
 When('I search for the created account', async ({ page }) => {
     const accountsPage = new AccountsPage(page);
-    const accountSearchData = getaccount_searchdata();
-    console.log(`Searching for account: ${accountSearchData.name}`);
-    await accountsPage.searchForAccount(accountSearchData.name);
+    const randomName = getRandomAccountName();
+    if (!randomName) {
+        throw new Error('No account names found in storage to search for.');
+    }
+    searchedAccountName = randomName;
+    console.log(`Searching for random account: ${searchedAccountName}`);
+    await accountsPage.searchForAccount(searchedAccountName);
 });
 
 Then('I should see the account in the list', async ({ page }) => {
     const accountsPage = new AccountsPage(page);
-    const accountSearchData = getaccount_searchdata();
-    console.log(`Verifying account ${accountSearchData.name} in list...`);
-    await accountsPage.verifyAccountInList(accountSearchData.name);
+    console.log(`Verifying account ${searchedAccountName} in list...`);
+    await accountsPage.verifyAccountInList(searchedAccountName);
 });
