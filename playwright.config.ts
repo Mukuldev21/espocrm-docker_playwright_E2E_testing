@@ -64,6 +64,15 @@ export default defineConfig({
       },
       grep: /@no-auth/,
     },
+    {
+      name: 'Data Generation',
+      testDir: './tests/data-gen',
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json',
+      },
+      dependencies: ['setup'],
+    },
 
     // {
     //   name: 'firefox',

@@ -1,0 +1,25 @@
+
+--- Generating Account 1 of 5 ---
+Creating account: Pym Systems
+Saved account name "Pym Systems" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Pym Systems created and saved.
+
+--- Generating Account 2 of 5 ---
+Creating account: Cyberdyne Association
+Saved account name "Cyberdyne Association" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Cyberdyne Association created and saved.
+
+--- Generating Account 3 of 5 ---
+Creating account: Rhine Lab Motors
+Saved account name "Rhine Lab Motors" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Rhine Lab Motors created and saved.
+
+--- Generating Account 4 of 5 ---
+Creating account: Teiwaz Motors
+Saved account name "Teiwaz Motors" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Teiwaz Motors created and saved.
+
+--- Generating Account 5 of 5 ---
+Creating account: Garrison Industries
+Saved account name "Garrison Industries" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Garrison Industries created and saved.
