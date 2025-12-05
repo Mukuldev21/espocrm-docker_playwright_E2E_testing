@@ -7,7 +7,7 @@ import { saveAccountName, getRandomAccountName } from '../../utils/fileUtils';
 
 const { Given, When, Then } = createBdd();
 
-let createdAccountDetails: { name: string, email: string };
+let createdAccountDetails: { name: string, email: string, website: string };
 let searchedAccountName: string;
 
 When('I click the "Create Account" button', async ({ page }) => {
@@ -23,6 +23,7 @@ When('I enter unique account details', async ({ page }) => {
     saveAccountName(createdAccountDetails.name);
     await accountsPage.enterAccountName(createdAccountDetails.name);
     await accountsPage.enterAccountEmail(createdAccountDetails.email);
+    await accountsPage.enterAccountWebsite(createdAccountDetails.website);
 });
 
 When('I click the "Save" button', async ({ page }) => {
