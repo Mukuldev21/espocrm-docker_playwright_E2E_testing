@@ -1,0 +1,25 @@
+
+--- Generating Account 1 of 5 ---
+Creating account: InGen Corp
+Saved account name "InGen Corp" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account InGen Corp created and saved.
+
+--- Generating Account 2 of 5 ---
+Creating account: Leithanien Motors
+Saved account name "Leithanien Motors" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Leithanien Motors created and saved.
+
+--- Generating Account 3 of 5 ---
+Creating account: InGen Association
+Saved account name "InGen Association" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account InGen Association created and saved.
+
+--- Generating Account 4 of 5 ---
+Creating account: Spade Motors
+Saved account name "Spade Motors" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Spade Motors created and saved.
+
+--- Generating Account 5 of 5 ---
+Creating account: Hyuga Unlimited
+Saved account name "Hyuga Unlimited" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Hyuga Unlimited created and saved.
