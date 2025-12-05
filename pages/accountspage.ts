@@ -21,7 +21,7 @@ export class AccountsPage {
         this.emailInput = page.locator('div[data-name="emailAddress"] input.email-address');
         this.saveButton = page.locator('button[data-action="save"]');
         this.websiteInput = page.locator('input[type="text"][data-name="website"]');
-        this.phoneInput = page.locator('div.field[data-name="phoneNumber"] input').first();
+        this.phoneInput = page.getByRole('textbox', { name: '-000-0000' });
 
         // Locator for verification (e.g., the header showing the account name after save)
         // Assuming the header has the account name
