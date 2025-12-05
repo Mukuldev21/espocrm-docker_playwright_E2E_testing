@@ -31,6 +31,7 @@ test.describe('Data Generation: Accounts', () => {
             // Enter Details
             await accountsPage.enterAccountName(accountDetails.name);
             await accountsPage.enterAccountEmail(accountDetails.email);
+            await accountsPage.enterAccountWebsite(accountDetails.website);
 
             // Save
             await accountsPage.clickSave();

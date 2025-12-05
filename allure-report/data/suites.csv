@@ -1,3 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","7854","TC008: Verify Account in List","EspoCRM E2E Tests","Thu Dec 04 23:57:26 IST 2025","passed","Thu Dec 04 23:57:34 IST 2025","Accounts Module","features\accounts.feature.spec.js","",""
-"","10963","authenticate","setup","Thu Dec 04 23:57:09 IST 2025","passed","Thu Dec 04 23:57:20 IST 2025","","..\tests\auth.setup.ts","",""
+"","5574","authenticate","setup","Fri Dec 05 23:14:14 IST 2025","passed","Fri Dec 05 23:14:19 IST 2025","","..\tests\auth.setup.ts","",""
+"","3027","TC007: Create New Account","EspoCRM E2E Tests","Fri Dec 05 23:14:22 IST 2025","passed","Fri Dec 05 23:14:25 IST 2025","Accounts Module","features\accounts.feature.spec.js","",""
