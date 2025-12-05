@@ -40,7 +40,7 @@ export function generateAccountDetails() {
     const randomDomain = domains[Math.floor(Math.random() * domains.length)];
     const formattedName = name.trim().toLowerCase().split(/\s+/).join('.');
     const website = `www.${formattedName}${randomDomain}`;
-    const phoneNumber = `${Math.floor(Math.random() * 10000000000)}`;
+    const phoneNumber = `${Math.floor(1000000000 + Math.random() * 9000000000)}`;
 
     return {
         name,
