@@ -9,6 +9,7 @@ export class AccountsPage {
     readonly saveButton: Locator;
     readonly accountNameHeader: Locator;
     readonly searchInput: Locator;
+    readonly phoneInput: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -20,6 +21,7 @@ export class AccountsPage {
         this.emailInput = page.locator('div[data-name="emailAddress"] input.email-address');
         this.saveButton = page.locator('button[data-action="save"]');
         this.websiteInput = page.locator('input[type="text"][data-name="website"]');
+        this.phoneInput = page.locator('input[type="text"][data-name="phoneNumber"]');
 
         // Locator for verification (e.g., the header showing the account name after save)
         // Assuming the header has the account name
@@ -45,6 +47,10 @@ export class AccountsPage {
 
     async enterAccountWebsite(website: string) {
         await this.websiteInput.fill(website);
+    }
+
+    async enterAccountPhoneNumber(phoneNumber: string) {
+        await this.phoneInput.fill(phoneNumber);
     }
 
     async clickSave() {

@@ -1,0 +1,25 @@
+
+--- Generating Account 1 of 5 ---
+Creating account: Baroque Works Systems
+Saved account name "Baroque Works Systems" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Baroque Works Systems created and saved.
+
+--- Generating Account 2 of 5 ---
+Creating account: Laterano Tech
+Saved account name "Laterano Tech" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Laterano Tech created and saved.
+
+--- Generating Account 3 of 5 ---
+Creating account: Lungmen Energy
+Saved account name "Lungmen Energy" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Lungmen Energy created and saved.
+
+--- Generating Account 4 of 5 ---
+Creating account: Marley Dynamics
+Saved account name "Marley Dynamics" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Marley Dynamics created and saved.
+
+--- Generating Account 5 of 5 ---
+Creating account: Tachikoma Systems
+Saved account name "Tachikoma Systems" to C:\Users\mukul\Downloads\espoCRM\espocrm-docker_playwright_E2E_testing\fixtures\accountnamesadded.json
+Account Tachikoma Systems created and saved.
