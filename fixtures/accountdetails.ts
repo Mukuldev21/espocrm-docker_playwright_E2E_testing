@@ -6,7 +6,8 @@ export function generateAccountDetails() {
         'Gringotts', 'Ollivanders', 'Daily Planet', 'LexCorp', 'Queen', 'Palmer', 'Choam', 'RDA', 'Blue Sun', 'Slusho',
         'Abstergo', 'Vault-Tec', 'RobCo', 'Nuka-Cola', 'Ryan', 'Fontaine', 'Atlas', 'Hyperion', 'Maliwan', 'Jakobs',
         'Torgue', 'Dahl', 'Vladof', 'Arasaka', 'Militech', 'Kang-Tao', 'Biotechnica', 'Petrochem', 'Zetatech', 'SovOil',
-        'Lazarus', 'Roxxon', 'Hammer', 'Trask', 'Worthington', 'Rand', 'Spade', 'Mars', 'Jupiter', 'Saturn',
+        'Lazarus', 'Roxxon', 'Hammer', 'Trask', 'Worthington', 'Rand', 'Spade', 'Mars', 'Jupiter', 'Saturn', 'Earth',
+        'Hawk', 'Weber', 'Mary',
         // Anime & Manga
         'Capsule', 'Red Ribbon', 'Speedwagon', 'Kame House', 'Hero', 'Konoha', 'Gotei', 'Survey', 'Nerv', 'Tekkadan',
         'Future', 'Foundation', 'Millefiore', 'Vongola', 'Simon', 'Anti-Spiral', 'Nudist Beach', 'Dollars', 'Black Knights', 'Britannia',
@@ -34,6 +35,59 @@ export function generateAccountDetails() {
     const randomSuffix = suffixes[Math.floor(Math.random() * suffixes.length)] || 'Corp';
     const uniqueId = Math.random().toString(36).substring(2, 7); // 5 char random string for email only
 
+    const randomstreet = [
+        '123 Main St', '456 Elm St', '789 Oak St', '101 Pine St', '202 Maple St',
+        '303 Birch St', '404 Cedar St', '505 Walnut St', '606 Cherry St', '707 Oak St',
+        '789 Pine St', '101 Maple St', '202 Birch St', '303 Cedar St', '404 Walnut St',
+        '505 Cherry St', '606 Oak St', '707 Pine St', '808 Maple St', '909 Birch St',
+        '99 Arc St', '111 Ash St', '222 Spruce St', '333 Poplar St', '444 Magnolia St',
+        '555 Willow St', '666 Cypress St', '777 Redwood St', '888 Sycamore St', '999 Palm St',
+        '135 Hickory St', '246 Chestnut St', '357 Dogwood St', '468 Fir St', '579 Alder St',
+        '680 Beech St', '791 Cottonwood St', '802 Juniper St', '913 Sequoia St', '1024 Linden St',
+        '1135 Locust St', '1246 Mulberry St', '1357 Persimmon St', '1468 Olive St', '1579 Peach St',
+        '1680 Plum St', '1791 Pear St', '1802 Apple St', '1903 Grapevine St', '2004 Citrus St',
+        ''
+    ];
+    const randomcity = [
+        // Real U.S. cities
+        'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix',
+        'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose',
+        'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'Charlotte',
+        'San Francisco', 'Indianapolis', 'Seattle', 'Denver', 'Washington',
+        'Boston', 'El Paso', 'Detroit', 'Nashville', 'Portland',
+        'Las Vegas', 'Memphis', 'Louisville', 'Baltimore', 'Milwaukee',
+        'Albuquerque', 'Tucson', 'Fresno', 'Sacramento', 'Kansas City',
+        'Atlanta', 'Miami', 'Raleigh', 'Omaha', 'Minneapolis',
+        'Cleveland', 'Orlando', 'St. Louis', 'Pittsburgh', 'Cincinnati',
+        'Salt Lake City', 'Richmond', 'Hartford', 'New Orleans', 'Buffalo',
+        'Birmingham', 'Anchorage', 'Honolulu', 'Madison', 'Des Moines',
+
+        // Fictional cities (anime + Marvel)
+        'Pallet Town',        // Pokémon
+        'Cerulean City',      // Pokémon
+        'Pewter City',        // Pokémon
+        'Konoha',             // Naruto
+        'Sunagakure',         // Naruto
+        'Kirigakure',         // Naruto
+        'Konohagakure',       // Naruto
+        'Latveria City',      // Marvel (Doctor Doom’s country capital)
+        'Wakanda City',       // Marvel (Black Panther’s homeland capital)
+        'Asgard City',        // Marvel (Thor’s realm, stylized as a city)
+        'Genosha',            // Marvel (mutant nation)
+        'Xandar',             // Marvel (Guardians of the Galaxy)
+        'Knowhere',           // Marvel (cosmic hub)
+        'Westview',           // Marvel (WandaVision town)
+        'Hell’s Kitchen',     // Marvel (Daredevil’s NYC neighborhood, stylized as city)
+    ];
+    const randomstate = ['NY', 'CA', 'IL', 'TX', 'AZ', 'PA', 'TX', 'CA', 'TX', 'CA'];
+    const randompostalCode = ['10001', '90001', '60601', '77001', '85001', '19101', '78001', '92001', '75001', '95001'];
+    const randomcountry = ['USA'];
+
+    const street = randomstreet[Math.floor(Math.random() * randomstreet.length)];
+    const city = randomcity[Math.floor(Math.random() * randomcity.length)];
+    const state = randomstate[Math.floor(Math.random() * randomstate.length)];
+    const postalCode = randompostalCode[Math.floor(Math.random() * randompostalCode.length)];
+    const country = randomcountry[Math.floor(Math.random() * randomcountry.length)];
     const name = `${randomPrefix} ${randomSuffix}`;
     const email = `${randomPrefix.toLowerCase().replace(/\s/g, '')}.${uniqueId}@example.com`;
     const domains = ['.com', '.co.in', '.co.us', '.net', '.org', '.io', '.tech'];
@@ -46,6 +100,11 @@ export function generateAccountDetails() {
         name,
         email,
         website,
-        phoneNumber
+        phoneNumber,
+        street,
+        city,
+        state,
+        postalCode,
+        country
     };
 }

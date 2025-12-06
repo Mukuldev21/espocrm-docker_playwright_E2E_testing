@@ -10,6 +10,11 @@ export class AccountsPage {
     readonly accountNameHeader: Locator;
     readonly searchInput: Locator;
     readonly phoneInput: Locator;
+    readonly billingAddressStreetInput: Locator;
+    readonly billingAddressCityInput: Locator;
+    readonly billingAddressStateInput: Locator;
+    readonly billingAddressPostalCodeInput: Locator;
+    readonly billingAddressCountryInput: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -22,6 +27,12 @@ export class AccountsPage {
         this.saveButton = page.locator('button[data-action="save"]');
         this.websiteInput = page.locator('input[type="text"][data-name="website"]');
         this.phoneInput = page.getByRole('textbox', { name: '-000-0000' });
+        this.billingAddressStreetInput = page.getByRole('textbox', { name: 'Street' }).first();
+        this.billingAddressCityInput = page.getByRole('textbox', { name: 'City' }).first();
+        this.billingAddressStateInput = page.getByRole('textbox', { name: 'State' }).first();
+        this.billingAddressPostalCodeInput = page.getByRole('textbox', { name: 'Postal Code' }).first();
+        this.billingAddressCountryInput = page.getByRole('textbox', { name: 'Country' }).first();
+
 
         // Locator for verification (e.g., the header showing the account name after save)
         // Assuming the header has the account name
@@ -51,6 +62,26 @@ export class AccountsPage {
 
     async enterAccountPhoneNumber(phoneNumber: string) {
         await this.phoneInput.fill(phoneNumber);
+    }
+
+    async enterBillingAddressStreet(street: string) {
+        await this.billingAddressStreetInput.fill(street);
+    }
+
+    async enterBillingAddressCity(city: string) {
+        await this.billingAddressCityInput.fill(city);
+    }
+
+    async enterBillingAddressState(state: string) {
+        await this.billingAddressStateInput.fill(state);
+    }
+
+    async enterBillingAddressPostalCode(postalCode: string) {
+        await this.billingAddressPostalCodeInput.fill(postalCode);
+    }
+
+    async enterBillingAddressCountry(country: string) {
+        await this.billingAddressCountryInput.fill(country);
     }
 
     async clickSave() {

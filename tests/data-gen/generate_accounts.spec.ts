@@ -33,6 +33,11 @@ test.describe('Data Generation: Accounts', () => {
             await accountsPage.enterAccountEmail(accountDetails.email);
             await accountsPage.enterAccountWebsite(accountDetails.website);
             await accountsPage.enterAccountPhoneNumber(accountDetails.phoneNumber);
+            await accountsPage.enterBillingAddressStreet(accountDetails.street);
+            await accountsPage.enterBillingAddressCity(accountDetails.city);
+            await accountsPage.enterBillingAddressState(accountDetails.state);
+            await accountsPage.enterBillingAddressPostalCode(accountDetails.postalCode);
+            await accountsPage.enterBillingAddressCountry(accountDetails.country);
 
             // Save
             await accountsPage.clickSave();
