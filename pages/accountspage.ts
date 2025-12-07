@@ -35,7 +35,7 @@ export class AccountsPage {
         this.billingAddressStateInput = page.getByRole('textbox', { name: 'State' }).first();
         this.billingAddressPostalCodeInput = page.getByRole('textbox', { name: 'Postal Code' }).first();
         this.billingAddressCountryInput = page.getByRole('textbox', { name: 'Country' }).first();
-        this.description = page.locator('[data-name="description"]');
+        this.description = page.locator('div[data-name="description"] textarea');
 
         // Dropdown locators (Selectize)
         this.typeSelect = page.locator('div[data-name="type"]').first();
