@@ -11,7 +11,7 @@ if (!fs.existsSync(allureResultsDir)) {
 const envProperties = `
 Browser=Chrome (Playwright)
 Environment=Local Docker
-URL=http://localhost:8080
+URL=http://localhost:4141
 User=Admin
 OS=${process.platform}
 NodeVersion=${process.version}

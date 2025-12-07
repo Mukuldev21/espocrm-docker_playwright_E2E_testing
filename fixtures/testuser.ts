@@ -1,4 +1,4 @@
 export const testUser = {
     username: 'heisenberg',
-    password: 'Methlord12#'
+    password: 'Saymyname12#'
 };

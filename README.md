@@ -32,7 +32,7 @@ Wait for the containers to initialize. You can check the status with:
 docker-compose ps
 ```
 
-Access the application at `http://localhost:8080` (or the port defined in your `docker-compose.yml`).
+Access the application at `http://localhost:4141` (or the port defined in your `docker-compose.yml`).
 
 ### 2. Install Dependencies
 

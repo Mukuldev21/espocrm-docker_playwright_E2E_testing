@@ -1,0 +1,130 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - text: 
+        - button "" [ref=e4] [cursor=pointer]:
+          - generic [ref=e5]: 
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "" [ref=e10] [cursor=pointer]:
+                - /url: "#"
+                - generic "Home" [ref=e11]:
+                  - generic [ref=e12]: 
+            - listitem [ref=e13]
+            - listitem [ref=e15]:
+              - link "" [ref=e16] [cursor=pointer]:
+                - /url: "#Account"
+                - generic "Accounts" [ref=e17]:
+                  - generic [ref=e18]: 
+            - listitem [ref=e19]:
+              - link "" [ref=e20] [cursor=pointer]:
+                - /url: "#Contact"
+                - generic "Contacts" [ref=e21]:
+                  - generic [ref=e22]: 
+            - listitem [ref=e23]:
+              - link "" [ref=e24] [cursor=pointer]:
+                - /url: "#Lead"
+                - generic "Leads" [ref=e25]:
+                  - generic [ref=e26]: 
+            - listitem [ref=e27]:
+              - link "$" [ref=e28] [cursor=pointer]:
+                - /url: "#Opportunity"
+                - generic "Opportunities" [ref=e29]:
+                  - generic [ref=e30]: $
+            - listitem [ref=e31]
+            - listitem [ref=e33]:
+              - link "" [ref=e34] [cursor=pointer]:
+                - /url: "#Email"
+                - generic "Emails" [ref=e35]:
+                  - generic [ref=e36]: 
+            - listitem [ref=e37]:
+              - link "" [ref=e38] [cursor=pointer]:
+                - /url: "#Meeting"
+                - generic "Meetings" [ref=e39]:
+                  - generic [ref=e40]: 
+            - listitem [ref=e41]:
+              - link "" [ref=e42] [cursor=pointer]:
+                - /url: "#Call"
+                - generic "Calls" [ref=e43]:
+                  - generic [ref=e44]: 
+            - listitem [ref=e45]:
+              - link "" [ref=e46] [cursor=pointer]:
+                - /url: "#Task"
+                - generic "Tasks" [ref=e47]:
+                  - generic [ref=e48]: 
+            - listitem [ref=e49]:
+              - link "" [ref=e50] [cursor=pointer]:
+                - /url: "#Calendar"
+                - generic "Calendar" [ref=e51]:
+                  - generic [ref=e52]: 
+            - listitem [ref=e53]
+            - listitem [ref=e55]:
+              - link "" [ref=e56] [cursor=pointer]:
+                - /url: "#Case"
+                - generic "Cases" [ref=e57]:
+                  - generic [ref=e58]: 
+            - listitem [ref=e59]:
+              - link "" [ref=e60] [cursor=pointer]:
+                - /url: "#KnowledgeBaseArticle"
+                - generic "Knowledge Base" [ref=e61]:
+                  - generic [ref=e62]: 
+            - listitem [ref=e63]
+            - listitem [ref=e65]:
+              - button "" [ref=e66] [cursor=pointer]:
+                - generic [ref=e67]: 
+              - text:         
+          - button "" [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]: 
+            - text: 
+        - list [ref=e70]:
+          - listitem [ref=e71]:
+            - generic [ref=e72]:
+              - searchbox "Search" [ref=e73]
+              - generic "Search" [ref=e75] [cursor=pointer]:
+                - generic [ref=e76]: 
+          - listitem [ref=e77]:
+            - button "+" [ref=e78] [cursor=pointer]:
+              - generic [ref=e79]: +
+          - listitem [ref=e80]:
+            - button "" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]: 
+          - listitem [ref=e83]:
+            - button "" [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]: 
+  - generic [ref=e87]:
+    - generic [ref=e89]:
+      - heading " Accounts" [level=3] [ref=e91]:
+        - generic "Click to refresh" [ref=e94] [cursor=pointer]:
+          - generic [ref=e95]: 
+          - text: Accounts
+      - link "+ Create Account" [ref=e98] [cursor=pointer]:
+        - /url: "#Account/create"
+        - generic [ref=e99]: +
+        - text: Create Account
+    - generic [ref=e100]:
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - button "All" [ref=e105] [cursor=pointer]: All
+          - text: 
+        - searchbox [active] [ref=e107]: Titans Corp
+        - button "" [ref=e109] [cursor=pointer]:
+          - generic [ref=e110]: 
+        - generic [ref=e111]:
+          - button "" [ref=e112] [cursor=pointer]:
+            - generic [ref=e113]: 
+          - button "" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: 
+      - text: 
+  - contentinfo [ref=e117]:
+    - paragraph [ref=e118]:
+      - text: © 2025
+      - link "EspoCRM, Inc." [ref=e119] [cursor=pointer]:
+        - /url: https://www.espocrm.com
+  - generic [ref=e122]: 
+```

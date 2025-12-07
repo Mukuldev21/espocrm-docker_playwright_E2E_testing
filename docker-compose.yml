@@ -28,7 +28,7 @@ services:
       ESPOCRM_DATABASE_PASSWORD: database_password
       ESPOCRM_ADMIN_USERNAME: admin
       ESPOCRM_ADMIN_PASSWORD: password
-      ESPOCRM_SITE_URL: "http://localhost:8080"
+      ESPOCRM_SITE_URL: "http://localhost:4141"
     volumes:
       - espocrm:/var/www/html
     restart: always
@@ -36,7 +36,7 @@ services:
       espocrm-db:
         condition: service_healthy
     ports:
-      - 8080:80
+      - 4141:80
 
   espocrm-daemon:
     image: espocrm/espocrm
