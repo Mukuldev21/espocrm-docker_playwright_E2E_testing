@@ -38,6 +38,9 @@ test.describe('Data Generation: Accounts', () => {
             await accountsPage.enterBillingAddressState(accountDetails.state);
             await accountsPage.enterBillingAddressPostalCode(accountDetails.postalCode);
             await accountsPage.enterBillingAddressCountry(accountDetails.country);
+            await accountsPage.selectType(accountDetails.type);
+            await accountsPage.selectIndustry(accountDetails.industry);
+            await accountsPage.enterDescription(accountDetails.description);
 
             // Save
             await accountsPage.clickSave();

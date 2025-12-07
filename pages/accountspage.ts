@@ -17,6 +17,7 @@ export class AccountsPage {
     readonly billingAddressCountryInput: Locator;
     readonly typeSelect: Locator;
     readonly industrySelect: Locator;
+    readonly description: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -34,6 +35,7 @@ export class AccountsPage {
         this.billingAddressStateInput = page.getByRole('textbox', { name: 'State' }).first();
         this.billingAddressPostalCodeInput = page.getByRole('textbox', { name: 'Postal Code' }).first();
         this.billingAddressCountryInput = page.getByRole('textbox', { name: 'Country' }).first();
+        this.description = page.locator('[data-name="description"]');
 
         // Dropdown locators (Selectize)
         this.typeSelect = page.locator('div[data-name="type"]').first();
@@ -98,6 +100,10 @@ export class AccountsPage {
     async selectIndustry(industry: string) {
         await this.industrySelect.click();
         await this.page.locator(`div[data-name="industry"] .selectize-dropdown-content .option:has-text("${industry}")`).click();
+    }
+
+    async enterDescription(description: string) {
+        await this.description.fill(description);
     }
 
     async clickSave() {

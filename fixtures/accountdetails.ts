@@ -85,6 +85,18 @@ export function generateAccountDetails() {
 
     const types = ['Customer', 'Investor', 'Partner', 'Reseller'];
     const industries = ['Software', 'Banking', 'Retail', 'Education', 'Healthcare', 'Manufacturing'];
+    const descriptions = [
+        "This is a test account description.",
+        "Focused on patient care, innovation, and medical technology.",
+        "Driven by investments, banking, and global economic trends.",
+        "Shaping the future with AI, cloud, and digital transformation.",
+        "Precision, efficiency, and large-scale production at its core.",
+        "Customer-centric, fast-moving, and highly competitive.",
+        "Powering progress through renewables, oil, and sustainable solutions.",
+        "Building knowledge, skills, and lifelong learning opportunities.",
+        "Creativity, storytelling, and immersive experiences worldwide.",
+        "Connecting people and goods through innovation and logistics."
+    ];
 
     const street = randomstreet[Math.floor(Math.random() * randomstreet.length)];
     const city = randomcity[Math.floor(Math.random() * randomcity.length)];
@@ -101,6 +113,7 @@ export function generateAccountDetails() {
 
     const type = types[Math.floor(Math.random() * types.length)];
     const industry = industries[Math.floor(Math.random() * industries.length)];
+    const description = descriptions[Math.floor(Math.random() * descriptions.length)];
 
     return {
         name,
@@ -113,6 +126,7 @@ export function generateAccountDetails() {
         postalCode,
         country,
         type,
-        industry
+        industry,
+        description
     };
 }
