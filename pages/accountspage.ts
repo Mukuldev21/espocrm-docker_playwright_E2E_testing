@@ -15,11 +15,15 @@ export class AccountsPage {
     readonly billingAddressStateInput: Locator;
     readonly billingAddressPostalCodeInput: Locator;
     readonly billingAddressCountryInput: Locator;
+
     readonly typeSelect: Locator;
     readonly industrySelect: Locator;
-
     readonly description: Locator;
     readonly editButton: Locator;
+    readonly actionsDropdown: Locator;
+    readonly removeButton: Locator;
+    readonly confirmRemoveButton: Locator;
+    readonly noDataLabel: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -37,9 +41,16 @@ export class AccountsPage {
         this.billingAddressStateInput = page.getByRole('textbox', { name: 'State' }).first();
         this.billingAddressPostalCodeInput = page.getByRole('textbox', { name: 'Postal Code' }).first();
         this.billingAddressCountryInput = page.getByRole('textbox', { name: 'Country' }).first();
-        this.billingAddressCountryInput = page.getByRole('textbox', { name: 'Country' }).first();
+
         this.description = page.locator('div[data-name="description"] textarea');
         this.editButton = page.getByRole('button', { name: 'Edit' });
+
+        // Delete locators
+        // Using codegen suggested locator
+        this.actionsDropdown = page.getByRole('group').getByRole('button').filter({ hasText: /^$/ }).first();
+        this.removeButton = page.getByRole('button', { name: 'Remove' });
+        this.confirmRemoveButton = page.getByRole('button', { name: 'Remove' }); // The one in modal
+        this.noDataLabel = page.getByText('No Data');
 
         // Dropdown locators (Selectize)
         this.typeSelect = page.locator('div[data-name="type"]').first();
@@ -126,6 +137,19 @@ export class AccountsPage {
 
     async clickEdit() {
         await this.editButton.click();
+    }
+
+    async deleteAccount() {
+        await this.actionsDropdown.click();
+        await this.removeButton.click();
+        await this.confirmRemoveButton.waitFor({ state: 'visible' });
+        await this.confirmRemoveButton.click();
+    }
+
+    async verifyAccountDeleted(name: string) {
+        // Go to searching
+        await this.searchForAccount(name);
+        await expect(this.noDataLabel).toBeVisible();
     }
 
     async searchForAccount(name: string) {

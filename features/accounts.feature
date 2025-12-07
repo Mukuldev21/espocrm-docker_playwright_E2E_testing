@@ -30,3 +30,14 @@ Feature: Accounts Module
         And I update the account name to include "Updated"
         And I click the "Save" button
         Then I should see the updated account name
+
+    @TC010
+    Scenario: TC010: Delete Account
+        Given I am on the dashboard
+        When I click on the "Accounts" menu item
+        And I click the "Create Account" button
+        And I enter unique account details
+        And I click the "Save" button
+        Then I should see the newly created account
+        When I delete the created account
+        Then I should not see the account in the list

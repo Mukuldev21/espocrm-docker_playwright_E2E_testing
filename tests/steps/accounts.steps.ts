@@ -90,3 +90,15 @@ Then('I should see the updated account name', async ({ page }) => {
     console.log(`Verifying updated account name: ${createdAccountDetails.name}`);
     await accountsPage.verifyAccountCreated(createdAccountDetails.name);
 });
+
+When('I delete the created account', async ({ page }) => {
+    const accountsPage = new AccountsPage(page);
+    console.log('Deleting created account...');
+    await accountsPage.deleteAccount();
+});
+
+Then('I should not see the account in the list', async ({ page }) => {
+    const accountsPage = new AccountsPage(page);
+    console.log(`Verifying account ${createdAccountDetails.name} is deleted...`);
+    await accountsPage.verifyAccountDeleted(createdAccountDetails.name);
+});
