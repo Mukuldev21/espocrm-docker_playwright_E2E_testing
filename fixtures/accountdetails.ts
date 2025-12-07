@@ -83,6 +83,9 @@ export function generateAccountDetails() {
     const randompostalCode = ['10001', '90001', '60601', '77001', '85001', '19101', '78001', '92001', '75001', '95001'];
     const randomcountry = ['USA'];
 
+    const types = ['Customer', 'Investor', 'Partner', 'Reseller'];
+    const industries = ['Software', 'Banking', 'Retail', 'Education', 'Healthcare', 'Manufacturing'];
+
     const street = randomstreet[Math.floor(Math.random() * randomstreet.length)];
     const city = randomcity[Math.floor(Math.random() * randomcity.length)];
     const state = randomstate[Math.floor(Math.random() * randomstate.length)];
@@ -96,6 +99,9 @@ export function generateAccountDetails() {
     const website = `www.${formattedName}${randomDomain}`;
     const phoneNumber = `${Math.floor(1000000000 + Math.random() * 9000000000)}`;
 
+    const type = types[Math.floor(Math.random() * types.length)];
+    const industry = industries[Math.floor(Math.random() * industries.length)];
+
     return {
         name,
         email,
@@ -105,6 +111,8 @@ export function generateAccountDetails() {
         city,
         state,
         postalCode,
-        country
+        country,
+        type,
+        industry
     };
 }

@@ -9,7 +9,7 @@
     "test:auth": "playwright test --project=\"Login Tests\"",
     "test:functional": "playwright test --project=\"EspoCRM E2E Tests\"",
     "generate-data": "playwright test --project=\"Data Generation\"",
-    "report": "allure generate allure-results -o allure-report --clean && node scripts/customize-theme.js && allure open allure-report"
+    "report": "allure generate allure-results -o allure-report --clean && allure open allure-report"
   },
   "repository": {
     "type": "git",

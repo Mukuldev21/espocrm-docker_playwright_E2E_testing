@@ -9,7 +9,8 @@ const { Given, When, Then } = createBdd();
 
 let createdAccountDetails: {
     name: string, email: string, website: string, phoneNumber: string
-    street: string, city: string, state: string, postalCode: string, country: string
+    street: string, city: string, state: string, postalCode: string, country: string,
+    type: string, industry: string
 };
 let searchedAccountName: string;
 
@@ -32,7 +33,10 @@ When('I enter unique account details', async ({ page }) => {
     await accountsPage.enterBillingAddressCity(createdAccountDetails.city);
     await accountsPage.enterBillingAddressState(createdAccountDetails.state);
     await accountsPage.enterBillingAddressPostalCode(createdAccountDetails.postalCode);
+    await accountsPage.enterBillingAddressPostalCode(createdAccountDetails.postalCode);
     await accountsPage.enterBillingAddressCountry(createdAccountDetails.country);
+    await accountsPage.selectType(createdAccountDetails.type);
+    await accountsPage.selectIndustry(createdAccountDetails.industry);
 });
 
 When('I click the "Save" button', async ({ page }) => {

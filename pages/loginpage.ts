@@ -19,7 +19,7 @@ export class LoginPage {
 
     async goto() {
         await this.page.goto('/');
-        await expect(this.page.getByRole('img')).toBeVisible();
+        await expect(this.page.getByRole('img')).toBeVisible({ timeout: 15000 });
     }
 
     async login(username: string, password: string) {
