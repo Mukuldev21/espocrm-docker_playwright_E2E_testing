@@ -17,7 +17,9 @@ export class AccountsPage {
     readonly billingAddressCountryInput: Locator;
     readonly typeSelect: Locator;
     readonly industrySelect: Locator;
+
     readonly description: Locator;
+    readonly editButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -35,7 +37,9 @@ export class AccountsPage {
         this.billingAddressStateInput = page.getByRole('textbox', { name: 'State' }).first();
         this.billingAddressPostalCodeInput = page.getByRole('textbox', { name: 'Postal Code' }).first();
         this.billingAddressCountryInput = page.getByRole('textbox', { name: 'Country' }).first();
+        this.billingAddressCountryInput = page.getByRole('textbox', { name: 'Country' }).first();
         this.description = page.locator('div[data-name="description"] textarea');
+        this.editButton = page.getByRole('button', { name: 'Edit' });
 
         // Dropdown locators (Selectize)
         this.typeSelect = page.locator('div[data-name="type"]').first();
@@ -118,6 +122,10 @@ export class AccountsPage {
         await expect(this.page).toHaveURL(new RegExp(`#Account/view/`));
         // Verify the header contains the name
         await expect(this.page.locator('.header-title')).toContainText(name);
+    }
+
+    async clickEdit() {
+        await this.editButton.click();
     }
 
     async searchForAccount(name: string) {

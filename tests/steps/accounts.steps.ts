@@ -70,3 +70,23 @@ Then('I should see the account in the list', async ({ page }) => {
     console.log(`Verifying account ${searchedAccountName} in list...`);
     await accountsPage.verifyAccountInList(searchedAccountName);
 });
+
+When('I click the "Edit" button', async ({ page }) => {
+    const accountsPage = new AccountsPage(page);
+    console.log('Clicking Edit button...');
+    await accountsPage.clickEdit();
+});
+
+When('I update the account name to include "Updated"', async ({ page }) => {
+    const accountsPage = new AccountsPage(page);
+    const newName = createdAccountDetails.name + ' Updated';
+    createdAccountDetails.name = newName;
+    console.log(`Updating account name to: ${newName}`);
+    await accountsPage.enterAccountName(newName);
+});
+
+Then('I should see the updated account name', async ({ page }) => {
+    const accountsPage = new AccountsPage(page);
+    console.log(`Verifying updated account name: ${createdAccountDetails.name}`);
+    await accountsPage.verifyAccountCreated(createdAccountDetails.name);
+});

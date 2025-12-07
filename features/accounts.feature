@@ -17,3 +17,16 @@ Feature: Accounts Module
         When I click on the "Accounts" menu item
         And I search for the created account
         Then I should see the account in the list
+
+    @TC009
+    Scenario: TC009: Edit Account
+        Given I am on the dashboard
+        When I click on the "Accounts" menu item
+        And I click the "Create Account" button
+        And I enter unique account details
+        And I click the "Save" button
+        Then I should see the newly created account
+        When I click the "Edit" button
+        And I update the account name to include "Updated"
+        And I click the "Save" button
+        Then I should see the updated account name

@@ -1,0 +1,223 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - text: 
+        - button "" [ref=e4] [cursor=pointer]:
+          - generic [ref=e5]: 
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "" [ref=e10] [cursor=pointer]:
+                - /url: "#"
+                - generic "Home" [ref=e11]:
+                  - generic [ref=e12]: 
+            - listitem [ref=e13]
+            - listitem [ref=e15]:
+              - link "" [ref=e16] [cursor=pointer]:
+                - /url: "#Account"
+                - generic "Accounts" [ref=e17]:
+                  - generic [ref=e18]: 
+            - listitem [ref=e19]:
+              - link "" [ref=e20] [cursor=pointer]:
+                - /url: "#Contact"
+                - generic "Contacts" [ref=e21]:
+                  - generic [ref=e22]: 
+            - listitem [ref=e23]:
+              - link "" [ref=e24] [cursor=pointer]:
+                - /url: "#Lead"
+                - generic "Leads" [ref=e25]:
+                  - generic [ref=e26]: 
+            - listitem [ref=e27]:
+              - link "$" [ref=e28] [cursor=pointer]:
+                - /url: "#Opportunity"
+                - generic "Opportunities" [ref=e29]:
+                  - generic [ref=e30]: $
+            - listitem [ref=e31]
+            - listitem [ref=e33]:
+              - link "" [ref=e34] [cursor=pointer]:
+                - /url: "#Email"
+                - generic "Emails" [ref=e35]:
+                  - generic [ref=e36]: 
+            - listitem [ref=e37]:
+              - link "" [ref=e38] [cursor=pointer]:
+                - /url: "#Meeting"
+                - generic "Meetings" [ref=e39]:
+                  - generic [ref=e40]: 
+            - listitem [ref=e41]:
+              - link "" [ref=e42] [cursor=pointer]:
+                - /url: "#Call"
+                - generic "Calls" [ref=e43]:
+                  - generic [ref=e44]: 
+            - listitem [ref=e45]:
+              - link "" [ref=e46] [cursor=pointer]:
+                - /url: "#Task"
+                - generic "Tasks" [ref=e47]:
+                  - generic [ref=e48]: 
+            - listitem [ref=e49]:
+              - link "" [ref=e50] [cursor=pointer]:
+                - /url: "#Calendar"
+                - generic "Calendar" [ref=e51]:
+                  - generic [ref=e52]: 
+            - listitem [ref=e53]
+            - listitem [ref=e55]:
+              - link "" [ref=e56] [cursor=pointer]:
+                - /url: "#Case"
+                - generic "Cases" [ref=e57]:
+                  - generic [ref=e58]: 
+            - listitem [ref=e59]:
+              - link "" [ref=e60] [cursor=pointer]:
+                - /url: "#KnowledgeBaseArticle"
+                - generic "Knowledge Base" [ref=e61]:
+                  - generic [ref=e62]: 
+            - listitem [ref=e63]
+            - listitem [ref=e65]:
+              - button "" [ref=e66] [cursor=pointer]:
+                - generic [ref=e67]: 
+              - text:         
+          - button "" [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]: 
+            - text: 
+        - list [ref=e70]:
+          - listitem [ref=e71]:
+            - generic [ref=e72]:
+              - searchbox "Search" [ref=e73]
+              - generic "Search" [ref=e75] [cursor=pointer]:
+                - generic [ref=e76]: 
+          - listitem [ref=e77]:
+            - button "+" [ref=e78] [cursor=pointer]:
+              - generic [ref=e79]: +
+          - listitem [ref=e80]:
+            - button " 1" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]: 
+              - generic [ref=e83]: "1"
+          - listitem [ref=e84]:
+            - button "" [ref=e85] [cursor=pointer]:
+              - generic [ref=e86]: 
+  - generic [ref=e88]:
+    - heading " Accounts › create" [level=3] [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: 
+          - link "Accounts" [ref=e97] [cursor=pointer]:
+            - /url: "#Account"
+        - generic [ref=e99]: ›
+        - generic [ref=e100]: create
+    - generic [ref=e102]:
+      - group [ref=e105]:
+        - button "Save" [disabled] [ref=e106]
+        - button "Cancel" [disabled] [ref=e107]
+        - button "" [disabled] [ref=e108]:
+          - generic [ref=e109]: 
+      - generic [ref=e111]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - heading "Overview" [level=4] [ref=e116]
+            - generic [ref=e117]:
+              - generic [ref=e118]:
+                - generic [ref=e119]:
+                  - generic [ref=e120]: Name *
+                  - textbox [ref=e122]: Choam Tech
+                - generic [ref=e123]:
+                  - generic [ref=e124]: Website
+                  - textbox [ref=e126]: www.choam.tech.io
+              - generic [ref=e127]:
+                - generic [ref=e128]:
+                  - generic [ref=e129]: Email
+                  - generic [ref=e130]:
+                    - generic [ref=e132]:
+                      - textbox [ref=e133]: choam.p0sid@example.com
+                      - generic [ref=e134]:
+                        - text: 
+                        - button "" [ref=e135] [cursor=pointer]:
+                          - generic [ref=e136]: 
+                        - button "" [ref=e137] [cursor=pointer]:
+                          - generic [ref=e138]: 
+                        - text: 
+                    - button "+" [ref=e139] [cursor=pointer]:
+                      - generic [ref=e140]: +
+                - generic [ref=e141]:
+                  - generic [ref=e142]: Phone
+                  - generic [ref=e143]:
+                    - generic [ref=e145]:
+                      - generic [ref=e148]:
+                        - generic [ref=e149]: Office
+                        - textbox [ref=e150] [cursor=pointer]
+                      - generic [ref=e151]:
+                        - generic:
+                          - combobox "Telephone country code" [ref=e153]:
+                            - generic [ref=e154]: "+1"
+                          - textbox "000-000-0000" [ref=e155]: 788-640-3579
+                      - generic [ref=e156]:
+                        - text: 
+                        - button "" [ref=e157] [cursor=pointer]:
+                          - generic [ref=e158]: 
+                        - button "" [ref=e159] [cursor=pointer]:
+                          - generic [ref=e160]: 
+                        - text: 
+                    - button "+" [ref=e161] [cursor=pointer]:
+                      - generic [ref=e162]: +
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - generic [ref=e165]: Billing Address
+                  - generic [ref=e166]:
+                    - textbox "Street" [ref=e167]: 1680 Plum St
+                    - generic [ref=e168]:
+                      - textbox "City" [ref=e170]: Sacramento
+                      - textbox "State" [ref=e172]: PA
+                      - textbox "Postal Code" [ref=e174]: "75001"
+                    - textbox "Country" [ref=e175]: USA
+                - generic [ref=e176]:
+                  - generic [ref=e177]: Shipping Address
+                  - generic [ref=e178]:
+                    - textbox "Street" [ref=e179]
+                    - generic [ref=e180]:
+                      - textbox "City" [ref=e182]
+                      - textbox "State" [ref=e184]
+                      - textbox "Postal Code" [ref=e186]
+                    - textbox "Country" [ref=e187]
+                    - button "Copy Billing" [ref=e188] [cursor=pointer]
+          - generic [ref=e189]:
+            - heading "Details" [level=4] [ref=e191]
+            - generic [ref=e192]:
+              - generic [ref=e193]:
+                - generic [ref=e194]:
+                  - generic [ref=e195]: Type
+                  - generic [ref=e198]:
+                    - generic [ref=e199]: Customer
+                    - textbox [ref=e200] [cursor=pointer]
+                - generic [ref=e201]:
+                  - generic [ref=e202]: Industry
+                  - generic [ref=e205]:
+                    - generic [ref=e206]: Healthcare
+                    - textbox [ref=e207] [cursor=pointer]
+              - generic [ref=e209]:
+                - generic [ref=e210]: Description
+                - textbox [ref=e212]: Customer-centric, fast-moving, and highly competitive.
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - generic [ref=e218]: Assigned User
+            - generic [ref=e220]:
+              - textbox "Select" [ref=e221]
+              - generic [ref=e222]:
+                - button "" [ref=e223] [cursor=pointer]:
+                  - generic [ref=e224]: 
+                - button "" [ref=e225] [cursor=pointer]:
+                  - generic [ref=e226]: 
+          - generic [ref=e227]:
+            - generic [ref=e228]: Teams
+            - generic [ref=e230]:
+              - textbox "Select" [ref=e231]
+              - button "" [ref=e233] [cursor=pointer]:
+                - generic [ref=e234]: 
+  - contentinfo [ref=e235]:
+    - paragraph [ref=e236]:
+      - text: © 2025
+      - link "EspoCRM, Inc." [ref=e237] [cursor=pointer]:
+        - /url: https://www.espocrm.com
+  - generic [ref=e239]: Saving...
+```
