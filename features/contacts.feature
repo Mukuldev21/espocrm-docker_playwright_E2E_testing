@@ -10,3 +10,10 @@ Feature: Contacts Module
         And I enter unique contact details
         And I click the "Save" button
         Then I should see the newly created contact
+
+    @TC012
+    Scenario: TC012: Filter Contact 
+        Given I am on the dashboard
+        When I click on the "Contacts" menu item
+        And I search for the created contact
+        Then I should see the contact in the list

@@ -11,6 +11,7 @@ export class ContactsPage {
     readonly phoneNumber: Locator;
     readonly description: Locator;
     readonly saveButton: Locator;
+    readonly search: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -23,19 +24,13 @@ export class ContactsPage {
         this.phoneNumber = page.locator('input.form-control.phone-number');
         this.description = page.locator('div[data-name="description"] textarea');
         this.saveButton = page.locator('button[data-action="save"]');
+        this.search = page.locator('input[data-name="textFilter"]');
     }
 
-    // async clickContactsLink() {
-    //     await this.contactsLink.click();
-    // }
 
     async clickCreateContactButton() {
         await this.createContactButton.click();
     }
-
-    // async enterName(name: string) {
-    //     await this.name.fill(name);
-    // }
 
     async enterFirstName(firstName: string) {
         await this.firstName.fill(firstName);
@@ -67,5 +62,17 @@ export class ContactsPage {
         await expect(this.page).toHaveURL(new RegExp(`#Contact/view/`));
         // Verify the header contains the name
         await expect(this.page.locator('.header-title')).toContainText(name);
+    }
+
+    async searchForContact(name: string) {
+        await this.search.fill(name);
+        await this.page.keyboard.press('Enter');
+        await this.page.waitForLoadState('networkidle');
+    }
+
+    async verifyContactInList(name: string) {
+        // Verify the contact name appears in the list
+        // Assuming the list has links with the contact name
+        await expect(this.page.getByRole('link', { name: name }).first()).toBeVisible();
     }
 }
