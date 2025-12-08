@@ -30,5 +30,5 @@ When('I enter unique contact details', async ({ page }) => {
 Then('I should see the newly created contact', async ({ page }) => {
     const contactsPage = new ContactsPage(page);
     console.log('Verifying newly created contact...');
-    await contactsPage.verifyContactCreated('John');
+    await contactsPage.verifyContactCreated(createdContactDetails.firstName);
 });
