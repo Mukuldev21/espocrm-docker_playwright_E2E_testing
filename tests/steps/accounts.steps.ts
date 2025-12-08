@@ -2,7 +2,6 @@ import { createBdd } from 'playwright-bdd';
 import { AccountsPage } from '../../pages/accountspage';
 import { expect } from '@playwright/test';
 import { generateAccountDetails } from '../../fixtures/accountdetails';
-import { getaccount_searchdata } from '../../fixtures/search_accountdata';
 import { saveAccountName, getRandomAccountName } from '../../utils/fileUtils';
 
 const { Given, When, Then } = createBdd();
