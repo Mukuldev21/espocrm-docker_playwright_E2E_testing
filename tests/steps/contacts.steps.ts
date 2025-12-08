@@ -50,3 +50,17 @@ Then('I should see the contact in the list', async ({ page }) => {
     console.log('Verifying contact in list...');
     await contactsPage.verifyContactInList(searchContactDetails.name);
 });
+
+When('I update the contact name to include "Updated"', async ({ page }) => {
+    const contactsPage = new ContactsPage(page);
+    const newName = createdContactDetails.firstName + ' Updated';
+    createdContactDetails.firstName = newName;
+    console.log(`Updating contact name to: ${newName}`);
+    await contactsPage.enterFirstName(newName);
+});
+
+Then('I should see the updated contact name', async ({ page }) => {
+    const contactsPage = new ContactsPage(page);
+    console.log('Verifying updated contact name...');
+    await contactsPage.verifyContactCreated(createdContactDetails.firstName);
+});
