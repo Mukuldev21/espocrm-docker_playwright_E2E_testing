@@ -17,8 +17,8 @@ export class ContactsPage {
         // this.contactsLink = page.locator('.nav-link[href="#Contact"]');
         this.createContactButton = page.getByRole('link', { name: 'Create Contact' });
         //this.name = page.locator('input[name="name"]');
-        this.firstName = page.locator('input[type="text"][data-name="firstName"]');
-        this.lastName = page.locator('input[type="text"][data-name="lastName"]');
+        this.firstName = page.locator('input.form-control[data-name="firstName"]');
+        this.lastName = page.locator('input.form-control[data-name="lastName"]');
         this.email = page.locator('div[data-name="emailAddress"] input.email-address');
         this.phoneNumber = page.getByRole('textbox', { name: '-000-0000' });
         this.description = page.locator('div[data-name="description"] textarea');
