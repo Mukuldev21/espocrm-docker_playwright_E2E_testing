@@ -13,6 +13,11 @@ export class ContactsPage {
     readonly saveButton: Locator;
     readonly search: Locator;
 
+    readonly actionsDropdown: Locator;
+    readonly removeButton: Locator;
+    readonly confirmRemoveButton: Locator;
+    readonly noDataLabel: Locator;
+
     constructor(page: Page) {
         this.page = page;
         // this.contactsLink = page.locator('.nav-link[href="#Contact"]');
@@ -25,6 +30,13 @@ export class ContactsPage {
         this.description = page.locator('div[data-name="description"] textarea');
         this.saveButton = page.locator('button[data-action="save"]');
         this.search = page.locator('input[data-name="textFilter"]');
+
+        // Delete locators
+        // Using codegen suggested locator
+        this.actionsDropdown = page.getByRole('group').getByRole('button').filter({ hasText: /^$/ }).first();
+        this.removeButton = page.getByRole('button', { name: 'Remove' });
+        this.confirmRemoveButton = page.getByRole('button', { name: 'Remove' }); // The one in modal
+        this.noDataLabel = page.getByText('No Data');
     }
 
 
@@ -71,8 +83,18 @@ export class ContactsPage {
     }
 
     async verifyContactInList(name: string) {
-        // Verify the contact name appears in the list
-        // Assuming the list has links with the contact name
         await expect(this.page.getByRole('link', { name: name }).first()).toBeVisible();
     }
-}
+
+    async deleteContact(name: string) {
+        await this.actionsDropdown.click();
+        await this.removeButton.click();
+        await this.confirmRemoveButton.waitFor({ state: 'visible' });
+        await this.confirmRemoveButton.click();
+    }
+
+    async verifyContactDeleted(name: string) {
+        await this.searchForContact(name);
+        await expect(this.noDataLabel).toBeVisible();
+    }
+}    

@@ -64,3 +64,15 @@ Then('I should see the updated contact name', async ({ page }) => {
     console.log('Verifying updated contact name...');
     await contactsPage.verifyContactCreated(createdContactDetails.firstName);
 });
+
+When('I delete the created contact', async ({ page }) => {
+    const contactsPage = new ContactsPage(page);
+    console.log('Deleting created contact...');
+    await contactsPage.deleteContact(createdContactDetails.firstName);
+});
+
+Then('I should not see the contact in the list', async ({ page }) => {
+    const contactsPage = new ContactsPage(page);
+    console.log(`Verifying contact ${createdContactDetails.firstName} is deleted...`);
+    await contactsPage.verifyContactDeleted(createdContactDetails.firstName);
+});

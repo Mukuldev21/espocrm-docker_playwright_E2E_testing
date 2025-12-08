@@ -30,3 +30,14 @@ Feature: Contacts Module
         And I update the contact name to include "Updated"
         And I click the "Save" button
         Then I should see the updated contact name
+
+     @TC014
+    Scenario: TC014: Delete Contact
+        Given I am on the dashboard
+        When I click on the "Contacts" menu item
+        And I click the "Create Contact" button
+        And I enter unique contact details
+        And I click the "Save" button
+        Then I should see the newly created contact
+        When I delete the created contact
+        Then I should not see the contact in the list
