@@ -10,5 +10,3 @@ Feature: Contacts Module
         And I enter unique contact details
         And I click the "Save" button
         Then I should see the newly created contact
-
-    

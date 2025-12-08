@@ -9,7 +9,6 @@ export class ContactsPage {
     readonly lastName: Locator;
     readonly email: Locator;
     readonly phoneNumber: Locator;
-    readonly website: Locator;
     readonly description: Locator;
     readonly saveButton: Locator;
 
@@ -18,11 +17,10 @@ export class ContactsPage {
         // this.contactsLink = page.locator('.nav-link[href="#Contact"]');
         this.createContactButton = page.getByRole('link', { name: 'Create Contact' });
         //this.name = page.locator('input[name="name"]');
-        this.firstName = page.getByPlaceholder('First Name');
-        this.lastName = page.getByPlaceholder('Last Name');
-        this.email = page.locator('input[type="email"]');
+        this.firstName = page.locator('input[type="text"][data-name="firstName"]');
+        this.lastName = page.locator('input[type="text"][data-name="lastName"]');
+        this.email = page.locator('div[data-name="emailAddress"] input.email-address');
         this.phoneNumber = page.getByRole('textbox', { name: '-000-0000' });
-        this.website = page.locator('input[type="text"][data-name="website"]');
         this.description = page.locator('div[data-name="description"] textarea');
         this.saveButton = page.locator('button[data-action="save"]');
     }
@@ -55,9 +53,6 @@ export class ContactsPage {
         await this.phoneNumber.fill(phoneNumber);
     }
 
-    async enterWebsite(website: string) {
-        await this.website.fill(website);
-    }
 
     async enterDescription(description: string) {
         await this.description.fill(description);
@@ -65,5 +60,12 @@ export class ContactsPage {
 
     async clickSaveButton() {
         await this.saveButton.click();
+    }
+
+    async verifyContactCreated(name: string) {
+        // Wait for the save to complete and redirect to detail view
+        await expect(this.page).toHaveURL(new RegExp(`#Contact/view/`));
+        // Verify the header contains the name
+        await expect(this.page.locator('.header-title')).toContainText(name);
     }
 }

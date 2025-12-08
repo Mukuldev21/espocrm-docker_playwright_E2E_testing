@@ -1,0 +1,200 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner:
+    - navigation [ref=e2]:
+      - generic [ref=e3]:
+        - text: 
+        - button "" [ref=e4] [cursor=pointer]:
+          - generic [ref=e5]: 
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "" [ref=e10] [cursor=pointer]:
+                - /url: "#"
+                - generic "Home" [ref=e11]:
+                  - generic [ref=e12]: 
+            - listitem [ref=e13]
+            - listitem [ref=e15]:
+              - link "" [ref=e16] [cursor=pointer]:
+                - /url: "#Account"
+                - generic "Accounts" [ref=e17]:
+                  - generic [ref=e18]: 
+            - listitem [ref=e19]:
+              - link "" [ref=e20] [cursor=pointer]:
+                - /url: "#Contact"
+                - generic "Contacts" [ref=e21]:
+                  - generic [ref=e22]: 
+            - listitem [ref=e23]:
+              - link "" [ref=e24] [cursor=pointer]:
+                - /url: "#Lead"
+                - generic "Leads" [ref=e25]:
+                  - generic [ref=e26]: 
+            - listitem [ref=e27]:
+              - link "$" [ref=e28] [cursor=pointer]:
+                - /url: "#Opportunity"
+                - generic "Opportunities" [ref=e29]:
+                  - generic [ref=e30]: $
+            - listitem [ref=e31]
+            - listitem [ref=e33]:
+              - link "" [ref=e34] [cursor=pointer]:
+                - /url: "#Email"
+                - generic "Emails" [ref=e35]:
+                  - generic [ref=e36]: 
+            - listitem [ref=e37]:
+              - link "" [ref=e38] [cursor=pointer]:
+                - /url: "#Meeting"
+                - generic "Meetings" [ref=e39]:
+                  - generic [ref=e40]: 
+            - listitem [ref=e41]:
+              - link "" [ref=e42] [cursor=pointer]:
+                - /url: "#Call"
+                - generic "Calls" [ref=e43]:
+                  - generic [ref=e44]: 
+            - listitem [ref=e45]:
+              - link "" [ref=e46] [cursor=pointer]:
+                - /url: "#Task"
+                - generic "Tasks" [ref=e47]:
+                  - generic [ref=e48]: 
+            - listitem [ref=e49]:
+              - link "" [ref=e50] [cursor=pointer]:
+                - /url: "#Calendar"
+                - generic "Calendar" [ref=e51]:
+                  - generic [ref=e52]: 
+            - listitem [ref=e53]
+            - listitem [ref=e55]:
+              - link "" [ref=e56] [cursor=pointer]:
+                - /url: "#Case"
+                - generic "Cases" [ref=e57]:
+                  - generic [ref=e58]: 
+            - listitem [ref=e59]:
+              - link "" [ref=e60] [cursor=pointer]:
+                - /url: "#KnowledgeBaseArticle"
+                - generic "Knowledge Base" [ref=e61]:
+                  - generic [ref=e62]: 
+            - listitem [ref=e63]
+            - listitem [ref=e65]:
+              - button "" [ref=e66] [cursor=pointer]:
+                - generic [ref=e67]: 
+              - text:         
+          - button "" [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]: 
+            - text: 
+        - list [ref=e70]:
+          - listitem [ref=e71]:
+            - generic [ref=e72]:
+              - searchbox "Search" [ref=e73]
+              - generic "Search" [ref=e75] [cursor=pointer]:
+                - generic [ref=e76]: 
+          - listitem [ref=e77]:
+            - button "+" [ref=e78] [cursor=pointer]:
+              - generic [ref=e79]: +
+          - listitem [ref=e80]:
+            - button "" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]: 
+          - listitem [ref=e83]:
+            - button "" [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]: 
+  - generic [ref=e87]:
+    - heading " Contacts › create" [level=3] [ref=e91]:
+      - generic [ref=e92]:
+        - generic [ref=e94]:
+          - generic [ref=e95]: 
+          - link "Contacts" [ref=e96] [cursor=pointer]:
+            - /url: "#Contact"
+        - generic [ref=e98]: ›
+        - generic [ref=e99]: create
+    - generic [ref=e101]:
+      - group [ref=e104]:
+        - button "Save" [ref=e105] [cursor=pointer]
+        - button "Cancel" [ref=e106] [cursor=pointer]
+        - button "" [ref=e107] [cursor=pointer]:
+          - generic [ref=e108]: 
+      - generic [ref=e109]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e116]: Name *
+              - generic [ref=e118]:
+                - textbox [ref=e122] [cursor=pointer]
+                - textbox "First Name" [ref=e124]
+                - textbox "Last Name" [ref=e126]: JohnDoe
+            - generic [ref=e127]:
+              - generic [ref=e128]: Accounts
+              - generic [ref=e130]:
+                - textbox "Select" [ref=e131]
+                - button "" [ref=e133] [cursor=pointer]:
+                  - generic [ref=e134]: 
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - generic [ref=e137]: Email
+              - generic [ref=e138]:
+                - generic [ref=e140]:
+                  - textbox [ref=e141]
+                  - generic [ref=e142]:
+                    - text: 
+                    - button "" [ref=e143] [cursor=pointer]:
+                      - generic [ref=e144]: 
+                    - button "" [ref=e145] [cursor=pointer]:
+                      - generic [ref=e146]: 
+                    - text: 
+                - button "+" [disabled] [ref=e147]:
+                  - generic [ref=e148]: +
+            - generic [ref=e149]:
+              - generic [ref=e150]: Phone
+              - generic [ref=e151]:
+                - generic [ref=e153]:
+                  - generic [ref=e156]:
+                    - generic [ref=e157]: Mobile
+                    - textbox [ref=e158] [cursor=pointer]
+                  - generic [ref=e159]:
+                    - generic:
+                      - combobox "Telephone country code" [ref=e161]:
+                        - generic [ref=e162]: "+1"
+                      - textbox "000-000-0000" [ref=e163]: john.doe@example.com1234567890
+                  - generic [ref=e164]:
+                    - text: 
+                    - button "" [ref=e165] [cursor=pointer]:
+                      - generic [ref=e166]: 
+                    - button "" [ref=e167] [cursor=pointer]:
+                      - generic [ref=e168]: 
+                    - text: 
+                - button "+" [ref=e169] [cursor=pointer]:
+                  - generic [ref=e170]: +
+          - generic [ref=e172]:
+            - generic [ref=e173]: Address
+            - generic [ref=e174]:
+              - textbox "Street" [ref=e175]
+              - generic [ref=e176]:
+                - textbox "City" [ref=e178]
+                - textbox "State" [ref=e180]
+                - textbox "Postal Code" [ref=e182]
+              - textbox "Country" [ref=e183]
+          - generic [ref=e186]:
+            - generic [ref=e187]: Description
+            - textbox [ref=e189]: This is a test contact
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - generic [ref=e195]: Assigned User
+            - generic [ref=e197]:
+              - textbox "Select" [ref=e198]
+              - generic [ref=e199]:
+                - button "" [ref=e200] [cursor=pointer]:
+                  - generic [ref=e201]: 
+                - button "" [ref=e202] [cursor=pointer]:
+                  - generic [ref=e203]: 
+          - generic [ref=e204]:
+            - generic [ref=e205]: Teams
+            - generic [ref=e207]:
+              - textbox "Select" [ref=e208]
+              - button "" [ref=e210] [cursor=pointer]:
+                - generic [ref=e211]: 
+          - generic:  –
+  - contentinfo [ref=e212]:
+    - paragraph [ref=e213]:
+      - text: © 2025
+      - link "EspoCRM, Inc." [ref=e214] [cursor=pointer]:
+        - /url: https://www.espocrm.com
+```
