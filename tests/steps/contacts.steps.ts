@@ -1,8 +1,12 @@
 import { createBdd } from 'playwright-bdd';
 import { ContactsPage } from '../../pages/contactspage';
 import { expect } from '@playwright/test';
-
+import { generateContactDetails } from '../../fixtures/contactdetails';
 const { Given, When, Then } = createBdd();
+
+let createdContactDetails: {
+    firstName: string, lastName: string, email: string, phoneNumber: string, description: string
+};
 
 When('I click the "Create Contact" button', async ({ page }) => {
     const contactsPage = new ContactsPage(page);
@@ -12,12 +16,13 @@ When('I click the "Create Contact" button', async ({ page }) => {
 
 When('I enter unique contact details', async ({ page }) => {
     const contactsPage = new ContactsPage(page);
+    createdContactDetails = generateContactDetails();
     console.log('Entering unique contact details...');
-    await contactsPage.enterFirstName('John12');
-    await contactsPage.enterLastName('Doe23');
-    await contactsPage.enterEmail('john.doe234@example.com');
-    await contactsPage.enterPhoneNumber('1234567890');
-    await contactsPage.enterDescription('This is a test contact');
+    await contactsPage.enterFirstName(createdContactDetails.firstName);
+    await contactsPage.enterLastName(createdContactDetails.lastName);
+    await contactsPage.enterEmail(createdContactDetails.email);
+    await contactsPage.enterPhoneNumber(createdContactDetails.phoneNumber);
+    await contactsPage.enterDescription(createdContactDetails.description);
 
 
 });
