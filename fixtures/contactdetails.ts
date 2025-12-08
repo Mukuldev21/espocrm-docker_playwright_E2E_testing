@@ -21,8 +21,8 @@ export function generateContactDetails() {
     const uniqueId = Math.random().toString(36).substring(2, 7); // 5 char random string for email only
     const firstName = RandomFirstName[Math.floor(Math.random() * RandomLastName.length)]
     const lastName = RandomLastName[Math.floor(Math.random() * RandomLastName.length)]
-    const email = `${firstName}.${lastName}${uniqueId}@gmail.com`;
-    const phoneNumber = Math.floor(Math.random() * 1000000000).toString();
+    const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}${uniqueId}@gmail.com`;
+    const phoneNumber = `${Math.floor(1000000000 + Math.random() * 9000000000)}`;
     const description = 'Naruto is a ninja';
 
     return {
