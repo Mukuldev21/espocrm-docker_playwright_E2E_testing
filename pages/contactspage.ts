@@ -20,7 +20,7 @@ export class ContactsPage {
         this.firstName = page.locator('input.form-control[data-name="firstName"]');
         this.lastName = page.locator('input.form-control[data-name="lastName"]');
         this.email = page.locator('div[data-name="emailAddress"] input.email-address');
-        this.phoneNumber = page.getByRole('textbox', { name: '-000-0000' });
+        this.phoneNumber = page.locator('input.form-control.phone-number');
         this.description = page.locator('div[data-name="description"] textarea');
         this.saveButton = page.locator('button[data-action="save"]');
     }

@@ -13,11 +13,11 @@ When('I click the "Create Contact" button', async ({ page }) => {
 When('I enter unique contact details', async ({ page }) => {
     const contactsPage = new ContactsPage(page);
     console.log('Entering unique contact details...');
-    contactsPage.enterFirstName('John');
-    contactsPage.enterLastName('Doe');
-    contactsPage.enterEmail('john.doe@example.com');
-    contactsPage.enterPhoneNumber('1234567890');
-    contactsPage.enterDescription('This is a test contact');
+    await contactsPage.enterFirstName('John12');
+    await contactsPage.enterLastName('Doe23');
+    await contactsPage.enterEmail('john.doe234@example.com');
+    await contactsPage.enterPhoneNumber('1234567890');
+    await contactsPage.enterDescription('This is a test contact');
 
 
 });
